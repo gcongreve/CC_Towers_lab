@@ -6,12 +6,14 @@ public class Hotel {
     private ArrayList<Bedroom> bedrooms;
     private ArrayList<DiningRoom> diningroom;
     private ArrayList<ConferenceRoom> conferencerooms;
+    private ArrayList<Booking> bookings;
 
     public Hotel(String name){
         this.name = name;
         bedrooms = new ArrayList <>();
         diningroom = new ArrayList <>();
         conferencerooms = new ArrayList <>();
+        bookings = new ArrayList <>();
     }
 
 
@@ -75,4 +77,15 @@ public class Hotel {
     public void checkOutDiningRoom(Guest guest, DiningRoom diningroom) {
         diningroom.removeGuest();
     }
+
+    public Booking makeBooking(int numberOfNights, Bedroom bedroom) {
+        Booking newBooking = new Booking(numberOfNights, bedroom);
+        this.bookings.add(newBooking);
+        return newBooking;
+    }
+
+    public int noOfBookings() {
+        return this.bookings.size();
+    }
+
 }
