@@ -17,4 +17,9 @@ public class Booking {
     public Bedroom hasBedRoom(Bedroom bedroom) {
         return this.bedroom;
     }
+    public int getTotalBill(){
+        int total = bedroom.getNightlyRate() * this.noOfNights;
+        System.out.println("Bill: " + total);
+        return total;
+    }
 }

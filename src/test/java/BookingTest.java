@@ -24,4 +24,8 @@ public class BookingTest {
         assertEquals(bedroom, booking.hasBedRoom(bedroom));
     }
 
+     @Test
+    public void canReturnBill(){
+        assertEquals(40, booking.getTotalBill());
+     }
 }
