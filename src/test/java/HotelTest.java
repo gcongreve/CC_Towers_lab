@@ -43,4 +43,45 @@ public class HotelTest {
         assertEquals(1, hotel.noOfDiningRooms());
     }
 
+    @Test
+    public void checkGuestInBedroom(){
+        hotel.checkInBedroom(guest, bedroom);
+        assertEquals(1, hotel.guestInBedroom(bedroom));
+    }
+
+    @Test
+    public void removeGuestFromBedroom(){
+        hotel.checkInBedroom(guest, bedroom);
+        assertEquals(1, hotel.guestInBedroom(bedroom));
+        hotel.checkOutBedroom(guest, bedroom);
+        assertEquals(0, hotel.guestInBedroom(bedroom));
+    }
+
+    @Test
+    public void checkGuestInConferenceRoom(){
+        hotel.checkInConferenceRoom(guest, conference);
+        assertEquals(1, hotel.guestInConference(conference));
+    }
+
+    @Test
+    public void removeGuestFromConferenceRoom(){
+        hotel.checkInConferenceRoom(guest, conference);
+        assertEquals(1, hotel.guestInConference(conference));
+        hotel.checkOutConferenceRoom(guest, conference);
+        assertEquals(0, hotel.guestInConference(conference));
+    }
+
+    @Test
+    public void checkGuestInDiningRoom(){
+        hotel.checkInDiningRoom(guest, diningroom);
+        assertEquals(1, hotel.guestInDiningRoom(diningroom));
+    }
+    @Test
+    public void removeGuestInDiningRoom(){
+        hotel.checkInDiningRoom(guest, diningroom);
+        assertEquals(1, hotel.guestInDiningRoom(diningroom));
+        hotel.checkOutDiningRoom(guest, diningroom);
+        assertEquals(0, hotel.guestInDiningRoom(diningroom));
+    }
+
 }

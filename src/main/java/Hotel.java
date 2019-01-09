@@ -43,4 +43,36 @@ public class Hotel {
         return this.diningroom.size();
     }
 
+    public void checkInBedroom(Guest guest, Bedroom bedroom) {
+        bedroom.addGuest(guest);
+    }
+
+    public int guestInBedroom(Bedroom bedroom) {
+        return bedroom.nofOfGuests();
+    }
+    public void checkInConferenceRoom(Guest guest, ConferenceRoom room){
+        room.addGuest(guest);
+    }
+    public int guestInConference(ConferenceRoom room){
+        return room.noOfGuests();
+    }
+
+    public void checkInDiningRoom(Guest guest, DiningRoom diningroom){
+        diningroom.addGuest(guest);
+    }
+    public int guestInDiningRoom(DiningRoom room){
+        return room.noOfGuests();
+    }
+
+    public void checkOutBedroom(Guest guest, Bedroom bedroom) {
+        bedroom.removeGuest();
+    }
+
+    public void checkOutConferenceRoom(Guest guest, ConferenceRoom conference) {
+        conference.removeGuest();
+    }
+
+    public void checkOutDiningRoom(Guest guest, DiningRoom diningroom) {
+        diningroom.removeGuest();
+    }
 }
