@@ -87,5 +87,15 @@ public class Hotel {
     public int noOfBookings() {
         return this.bookings.size();
     }
+    public ArrayList returnEmptyBedRooms(){
+        ArrayList<Bedroom> emptyRooms = new ArrayList <>();
+        for (Bedroom bedroom : this.bedrooms){
+            if (bedroom.nofOfGuests() == 0){
+                emptyRooms.add(bedroom);
+            }
+        }
+
+       return emptyRooms;
+    }
 
 }
